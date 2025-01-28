@@ -117,12 +117,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# settings.py
 STATIC_URL = '/static/'
 
-# Opcional: si tienes una carpeta raíz para archivos estáticos compartidos
+# Si estás en producción, asegúrate de que también se configuren las rutas correctas para los archivos estáticos
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "static",  # si tienes un directorio de archivos estáticos en el nivel de proyecto
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Solo para producción
+
 
 
 # Default primary key field type

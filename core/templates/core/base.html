@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
     <!-- Material icon -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    {% block stylesheets %}{% endblock stylesheets %}
 </head>
 <body>
     <div class="container">
@@ -60,9 +62,11 @@
             </a>
         </div>
     </aside>
-    {% block content %}
-    
-    {% endblock %}
+    <div class="content-block">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
     <div class="right">
         <div class="top">
             <button id="menu-btn">

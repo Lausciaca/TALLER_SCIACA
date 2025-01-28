@@ -607,3 +607,8 @@ main .recent-orders a{
         font-size: 2rem;
     }
 }
+
+
+.content-block{
+    display: flex;
+}
