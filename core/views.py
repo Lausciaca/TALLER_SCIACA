@@ -5,8 +5,6 @@ def dashboard(request):
     return render(request, 'core/dashboard.html')
 def clientes(request):
     return render(request, 'core/clientes.html')
-def ordenes(request):
-    return render(request, 'core/ordenes.html')
 def estadisticas(request):
     return render(request, 'core/estadisticas.html')
 def notificaciones(request):
