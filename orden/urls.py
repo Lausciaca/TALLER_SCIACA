@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import OrdenCreate
+from .views import OrdenCreate, OrdenListView
 
 orden_patterns = ([
-    path('', OrdenCreate.as_view(), name='create'),
+    path('', OrdenListView.as_view(), name='ordenes'),
+    path('create/', OrdenCreate.as_view(), name='create'),
 ], 'orden')

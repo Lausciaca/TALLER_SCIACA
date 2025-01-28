@@ -1,9 +1,17 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_table }} <!-- Renderiza el formulario -->
-        <button type="submit">Guardar</button>
-    </form> 
+<div>
+    <div class="datos-cliente">
+        <h2>Datos del cliente</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form1.as_p }}
+
+        <h2>Datos del vehiculo</h2>
+            {{ form2.as_p }}
+            <button type="submit">Enviar</button>
+        </form> 
+    </div>
+</div>
 {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div>
+    <h1>Ordenes</h1>
+    <ul>
+        {% for orden in object_list %}
+        Orden
+        {% comment %} <li>{{ cliente.nombre }} - {{ cliente.telefono }}</li> {% endcomment %}
+        {% empty %}
+        <li>No Ordenes yet.</li>
+        {% endfor %}
+    </ul>
+    <h2><a href="{% url "orden:create" %}">Agregar Orden</a></h2>
+</div>
+{% endblock content %}

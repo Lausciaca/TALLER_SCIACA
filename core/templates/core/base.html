@@ -33,11 +33,11 @@
                 <span class="material-symbols-outlined">grid_view</span> 
                 <h3>Dashboard</h3>
             </a>
-            <a href="{% url 'cliente:clientes' %}" class="{% if request.path == '/clientes/' %}active{% endif %}">
+            {% comment %} <a href="{% url 'cliente:clientes' %}" class="{% if '/clientes/' in request.path %}active{% endif %}">
                 <span class="material-symbols-outlined">person_outline</span> 
                 <h3>Clientes</h3>
-            </a>
-            <a href="{% url 'orden:create' %}" class="{% if request.path == '/ordenes/' %}active{% endif %}">
+            </a> {% endcomment %}
+            <a href="{% url 'orden:ordenes' %}" class="{% if '/ordenes/' in request.path %}active{% endif %}">
                 <span class="material-symbols-outlined">directions_car</span> 
                 <h3>Ordenes</h3>
             </a>
