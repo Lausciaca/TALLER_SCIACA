@@ -33,7 +33,7 @@
                 <span class="material-symbols-outlined">grid_view</span> 
                 <h3>Dashboard</h3>
             </a>
-            <a href="{% url 'clientes' %}" class="{% if request.path == '/clientes/' %}active{% endif %}">
+            <a href="{% url 'cliente:clientes' %}" class="{% if request.path == '/clientes/' %}active{% endif %}">
                 <span class="material-symbols-outlined">person_outline</span> 
                 <h3>Clientes</h3>
             </a>

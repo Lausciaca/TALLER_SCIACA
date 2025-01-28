@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div>
+    <h1>Clientes</h1>
+    <ul>
+        {% for cliente in object_list %}
+        <li>{{ cliente.nombre }} - {{ cliente.telefono }}</li>
+        {% empty %}
+        <li>No clientes yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
