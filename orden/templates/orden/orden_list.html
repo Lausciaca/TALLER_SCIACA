@@ -1,15 +1,34 @@
 {% extends 'core/base.html' %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static "orden/css/orden-list.css" %}">
+{% endblock stylesheets %}
+
 {% block content %}
-<div>
+<div class="ordenes">
     <h1>Ordenes</h1>
-    <ul>
+    <table class="ordenes-tabla">
+        <tr>
+            <th>Nombre del cliente</th>
+            <th>Vehiculo</th>
+            <th>Patente</th>
+            <th>Telefono</th>
+            <th>Cobertura</th>
+            <th>Estado</th>
+        </tr>
         {% for orden in object_list %}
-        Orden
-        {% comment %} <li>{{ cliente.nombre }} - {{ cliente.telefono }}</li> {% endcomment %}
+        <tr>
+            <td>{{orden.nombre_cliente}}</td>
+            <td>{{orden.marca_vehiculo}} {{orden.modelo_vehiculo}}</td>
+            <td>{{orden.patente_vehiculo}}</td>
+            <td>{{orden.telefono_cliente}}</td>
+            <td>{{orden.get_modalidad_display}}</td>
+            <td>{{ orden.get_estado_display }}</td>
+        </tr>
         {% empty %}
         <li>No Ordenes yet.</li>
         {% endfor %}
-    </ul>
+    </table>
     <h2><a href="{% url "orden:create" %}">Agregar Orden</a></h2>
 </div>
 {% endblock content %}

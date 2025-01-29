@@ -6,7 +6,7 @@
 
 {% block content %}
 <div>
-    <div class="datos-orden">
+    <div class="datos-orden" enctype="multipart/form-data">
         <h1>Nueva Orden</h1>
         <form method="post">
             {% csrf_token %}

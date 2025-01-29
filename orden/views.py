@@ -12,4 +12,7 @@ class OrdenListView(ListView):
 class OrdenCreate(CreateView):
     model = Orden
     form_class = OrdenForm
-
+    success_url = reverse_lazy('orden:ordenes')
+    def form_invalid(self, form):
+        print("Errores en el formulario:", form.errors)  # Debug en consola
+        return super().form_invalid(form)
