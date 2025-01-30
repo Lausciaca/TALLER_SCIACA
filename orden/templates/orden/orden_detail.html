@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static "orden/css/orden-detail.css" %}">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="orden-detail">
+    <h1>Orden de {{orden.nombre_cliente}}</h1>
+    <h2>Datos de la orden</h2>
+    <ul>
+        <li>Nombre: {{orden.nombre_cliente}}</li>
+        <li>Telefono: {{orden.telefono_cliente}}</li>
+        <li>Marca: {{orden.marca_vehiculo}}</li>
+        <li>Modelo: {{orden.modelo_vehiculo}}</li>
+        <li>Patente: {{orden.patente_vehiculo}}</li>
+        <li>Cobertura: {{orden.modalidad}}</li>
+        <li>Estado: {{orden.estado}}</li>
+        <li>Creado: {{orden.created}}</li>
+        <li>Imagenes: {{orden.imagenes}}</li>
+    </ul>
+    
+    <form action="{% url 'orden:delete' id=orden.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn-delete">Eliminar Orden</button>
+    </form>
+</div>
+{% endblock content %}

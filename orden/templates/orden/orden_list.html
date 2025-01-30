@@ -18,12 +18,12 @@
         </tr>
         {% for orden in object_list %}
         <tr>
-            <td>{{orden.nombre_cliente}}</td>
+            <td><a href='{% url 'orden:detail' id=orden.id %}'>{{orden.nombre_cliente}}</a></td>
             <td>{{orden.marca_vehiculo}} {{orden.modelo_vehiculo}}</td>
             <td>{{orden.patente_vehiculo}}</td>
             <td>{{orden.telefono_cliente}}</td>
             <td>{{orden.get_modalidad_display}}</td>
-            <td>{{ orden.get_estado_display }}</td>
+            <td class='estado-vehiculo'>{{ orden.get_estado_display }}</td>
         </tr>
         {% empty %}
         <li>No Ordenes yet.</li>
