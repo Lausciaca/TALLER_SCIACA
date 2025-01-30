@@ -14,3 +14,9 @@ class OrdenForm(forms.ModelForm):
             'imagenes': forms.ClearableFileInput(attrs={'class': 'input-container-input', 'id': ''}),
             'modalidad': forms.Select(attrs={'class': 'input-container-input', 'id': ''}),
         }
+
+
+class OrdenGeneralForm(forms.ModelForm):
+    class Meta:
+        model = Orden
+        fields = ['trabajos_a_realizar']

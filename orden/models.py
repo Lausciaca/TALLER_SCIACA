@@ -19,6 +19,7 @@ class Orden(models.Model):
     imagenes = models.ImageField(upload_to='Imagenes/', verbose_name='Imagenes del vehiculo', blank=True, null=True)
     modalidad = models.CharField(max_length=50, choices=MODALIDAD_CHOICES, verbose_name='Modalidad de cobertura', blank=False)
     estado = models.CharField(max_length=50, choices=ESTADOS_CHOICES, verbose_name='Modalidad de cobertura')
+    trabajos_a_realizar = models.JSONField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

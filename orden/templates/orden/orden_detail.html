@@ -18,8 +18,20 @@
         <li>Estado: {{orden.estado}}</li>
         <li>Creado: {{orden.created}}</li>
         <li>Imagenes: {{orden.imagenes}}</li>
+        <li>Trabajos a realizar:
+            <ul>
+                {% for categoria, partes in orden.trabajos_realizados.items %}
+                    <li><strong>{{ categoria }}:</strong></li>
+                    <ul>
+                        {% for parte in partes %}
+                            <li>{{ parte }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        </li>
     </ul>
-    
+
     <form action="{% url 'orden:delete' id=orden.id %}" method="POST">
         {% csrf_token %}
         <button type="submit" class="btn-delete">Eliminar Orden</button>
