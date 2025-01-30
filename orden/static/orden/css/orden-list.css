@@ -48,7 +48,7 @@
 .ordenes-tabla th {
     background-color: #007bff;
     font-size: 1rem;
-    color: var(--color-dark);
+    color: white;
 }
 
 .ordenes-tabla td {

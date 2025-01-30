@@ -46,7 +46,7 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
-    background-color: var(--color-background);
+    background-color: var(--color-white);
     outline: none;
     transition: border-color 0.3s;
     color: var(--color-dark);
