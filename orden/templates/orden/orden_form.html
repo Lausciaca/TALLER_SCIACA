@@ -48,8 +48,37 @@
                     </div>
                 </div>
             </div>
+            <div class='trabajos-vehiculo'>
+                <label for="trabajos" class="input-container-label">Daños y trabajos a realizar al vehiculo</label>
+                {{form.trabajos_a_realizar}}
+            </div>
             <button type="submit">Enviar</button>
         </form> 
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("agregar-fila").addEventListener("click", function () {
+            let container = document.getElementById("trabajos-container");
+            let nuevaFila = document.createElement("div");
+            nuevaFila.classList.add("trabajo-row");
+            nuevaFila.innerHTML = `
+                <select name="tipo-trabajo" class="tipo-trabajo">
+                    <option value="">Seleccione tipo de trabajo</option>
+                    <option value="Reparacion y pintura">Reparación y pintura</option>
+                    <option value="Sustitucion">Sustitución</option>
+                    <option value="Difuminado">Difuminado</option>
+                </select>
+                <select name="parte-vehiculo" class="parte-vehiculo">
+                    <option value="">Seleccione parte del vehículo</option>
+                    <option value="Guardabarros delantero derecho">Guardabarros delantero derecho</option>
+                    <option value="Capot">Capot</option>
+                    <option value="Paragolpes delantero">Paragolpes delantero</option>
+                </select>
+            `;
+            container.appendChild(nuevaFila);
+        });
+    });
+    </script>
 {% endblock content %}

@@ -16,7 +16,7 @@
             <th>Cobertura</th>
             <th>Siguiente paso</th>
         </tr>
-        {% for orden in object_list %}
+        {% for orden in ordenes %}
         <tr>
             <td><a href='{% url 'orden:detail' id=orden.id %}'>{{orden.nombre_cliente}}</a></td>
             <td>{{orden.marca_vehiculo}} {{orden.modelo_vehiculo}}</td>
